@@ -1,7 +1,5 @@
 # Laravel Scout Elasticsearch Driver
 
-[[Software License](LICENSE)
-
 This package makes is the [Elasticsearch](https://www.elastic.co/products/elasticsearch) driver for Laravel Scout.
 
 ## Contents
