@@ -6,7 +6,7 @@
     "require": {
         "php": "^7.1",
         "laravel/scout": "^5.0|^6.0|^7.0",
-        "elasticsearch/elasticsearch": "^6.7"
+        "elasticsearch/elasticsearch": "^7.0"
     },
      "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -16,18 +16,15 @@ class ElasticsearchEngine extends Engine
      */
     protected $elastic;
 
-    protected $type;
-
     /**
      * Create a new engine instance.
      *
      * @param  \Elasticsearch\Client  $elastic
      * @return void
      */
-    public function __construct(Elastic $elastic, $type = '_doc')
+    public function __construct(Elastic $elastic)
     {
         $this->elastic = $elastic;
-        $this->type = $type;
     }
 
     /**
@@ -46,7 +43,6 @@ class ElasticsearchEngine extends Engine
                 'update' => [
                     '_id' => $model->getKey(),
                     '_index' => $model->searchableAs(),
-                    '_type' => $this->type,
                 ]
             ];
             $params['body'][] = [
@@ -74,7 +70,6 @@ class ElasticsearchEngine extends Engine
                 'delete' => [
                     '_id' => $model->getKey(),
                     '_index' => $model->searchableAs(),
-                    '_type' => $this->type,
                 ]
             ];
         });
