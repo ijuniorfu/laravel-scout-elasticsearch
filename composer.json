@@ -19,7 +19,7 @@
         }
     },
     "suggest": {
-        "elasticsearch/elasticsearch": "Required to use the Elasticsearch engine (^5.0)."
+        "elasticsearch/elasticsearch": "Required to use the Elasticsearch engine (^6.7)."
     },
     "extra": {
         "laravel": {
