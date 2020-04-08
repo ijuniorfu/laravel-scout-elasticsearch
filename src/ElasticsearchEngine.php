@@ -107,7 +107,7 @@ class ElasticsearchEngine extends Engine
             'size' => $perPage,
         ]);
 
-        $result['nbPages'] = $result['hits']['total']/$perPage;
+        $result['nbPages'] = $this->getTotalCount($result)/$perPage;
 
         return $result;
     }
@@ -200,7 +200,7 @@ class ElasticsearchEngine extends Engine
      */
     public function map(\Laravel\Scout\Builder $builder, $results, $model)
     {
-        if ($results['hits']['total'] === 0) {
+        if ($this->getTotalCount($results) === 0) {
             return $model->newCollection();
         }
 
@@ -221,7 +221,7 @@ class ElasticsearchEngine extends Engine
      */
     public function getTotalCount($results)
     {
-        return $results['hits']['total'];
+        return $results['hits']['total']['value'];
     }
 
     /**
